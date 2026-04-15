@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/mailchimp",
+  "title": "mailchimp",
+  "description": "Mailchimp MCP Pack — manage audiences, campaigns, and members via Mailchimp Marketing API.",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/mailchimp",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-mailchimp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/mailchimp/mcp"
+    }
+  ]
+}
