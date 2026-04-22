@@ -2,21 +2,21 @@
 
 Mailchimp MCP Pack — manage audiences, campaigns, and members via Mailchimp Marketing API.
 
-Part of the [Pipeworx](https://pipeworx.io) open MCP gateway.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `mailchimp_list_audiences` | List all audiences (lists) in your Mailchimp account. Returns audience name, member count, and stats. |
-| `mailchimp_get_audience` | Get details of a specific Mailchimp audience (list) by ID. Returns name, stats, and settings. |
-| `mailchimp_list_campaigns` | List email campaigns from your Mailchimp account. Returns campaign title, type, status, and send time. |
-| `mailchimp_get_campaign` | Get details of a specific Mailchimp campaign by ID. Returns campaign settings, tracking, and report summary. |
-| `mailchimp_list_members` | List members (subscribers) of a specific Mailchimp audience. Returns email, status, and merge fields. |
+| `mailchimp_list_audiences` | View all audiences in your account. Returns audience names, member counts, and engagement stats. Use mailchimp_get_audience for detailed settings. |
+| `mailchimp_get_audience` | Get detailed settings and stats for a specific audience. Pass the audience ID (e.g., "abc123def456"). Returns name, member count, engagement metrics, and configuration. |
+| `mailchimp_list_campaigns` | View all email campaigns. Returns title, type (e.g., "regular", "automation"), status, and send timestamps. Use mailchimp_get_campaign for full details. |
+| `mailchimp_get_campaign` | Get full details of a campaign by ID (e.g., "abc123def456"). Returns settings, tracking configuration, performance stats, and send history. |
+| `mailchimp_list_members` | Get subscribers in an audience by ID (e.g., "abc123def456"). Returns email addresses, subscription status, and custom merge fields. |
 
 ## Quick Start
 
-Add to your MCP client config:
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 
 ```json
 {
@@ -28,11 +28,32 @@ Add to your MCP client config:
 }
 ```
 
-Or use the CLI:
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
 
-```bash
-npx pipeworx use mailchimp
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
 ```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Mailchimp data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
