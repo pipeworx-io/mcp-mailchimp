@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-mailchimp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Mailchimp MCP Pack — manage audiences, campaigns, and members via Mailchimp Marketing API.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-8355b3f2b6d341320df7961f00dc63fd42f2f3e0ef09d472cc82da7bd3c64344",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "sourceHash": "v1-b0ad409da096821f71d6994918277123ab6f1426790948227e12069b4bf0e6ea",
+    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
   }
 }
