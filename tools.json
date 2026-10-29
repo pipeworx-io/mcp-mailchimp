@@ -1,0 +1,129 @@
+[
+  {
+    "name": "mailchimp_list_audiences",
+    "description": "View all audiences in your account. Returns audience names, member counts, and engagement stats. Use mailchimp_get_audience for detailed settings.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Mailchimp API key (ends with -dc, e.g., abc123-us21)"
+        },
+        "count": {
+          "type": "number",
+          "description": "Number of audiences to return (default 10, max 1000)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Offset for pagination (default 0)"
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "mailchimp_get_audience",
+    "description": "Get detailed settings and stats for a specific audience. Pass the audience ID (e.g., \"abc123def456\"). Returns name, member count, engagement metrics, and configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Mailchimp API key"
+        },
+        "list_id": {
+          "type": "string",
+          "description": "Audience/list ID"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "list_id"
+      ]
+    }
+  },
+  {
+    "name": "mailchimp_list_campaigns",
+    "description": "View all email campaigns. Returns title, type (e.g., \"regular\", \"automation\"), status, and send timestamps. Use mailchimp_get_campaign for full details.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Mailchimp API key"
+        },
+        "count": {
+          "type": "number",
+          "description": "Number of campaigns to return (default 10, max 1000)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Offset for pagination (default 0)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Filter by status: save, paused, schedule, sending, sent"
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "mailchimp_get_campaign",
+    "description": "Get full details of a campaign by ID (e.g., \"abc123def456\"). Returns settings, tracking configuration, performance stats, and send history.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Mailchimp API key"
+        },
+        "campaign_id": {
+          "type": "string",
+          "description": "Campaign ID"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "campaign_id"
+      ]
+    }
+  },
+  {
+    "name": "mailchimp_list_members",
+    "description": "Get subscribers in an audience by ID (e.g., \"abc123def456\"). Returns email addresses, subscription status, and custom merge fields.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Mailchimp API key"
+        },
+        "list_id": {
+          "type": "string",
+          "description": "Audience/list ID"
+        },
+        "count": {
+          "type": "number",
+          "description": "Number of members to return (default 10, max 1000)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Offset for pagination (default 0)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Filter by status: subscribed, unsubscribed, cleaned, pending, transactional"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "list_id"
+      ]
+    }
+  }
+]
